@@ -19,7 +19,7 @@ sealed class ListItem {
         val distance: String,
         val time: String,
         val date: String,
-        val user: String,
+        val username: String,
 //        val start: String,
 //        val finish: String
     ) : ListItem()

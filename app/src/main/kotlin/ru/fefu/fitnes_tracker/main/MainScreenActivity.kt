@@ -12,9 +12,9 @@ class MainScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
 
-        val fragmentView = supportFragmentManager.findFragmentById(R.id.main_fragment) as NavHostFragment
+        val fragmentView = supportFragmentManager.findFragmentById(R.id.fragmentMain) as NavHostFragment
         val navController = fragmentView.navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.main_navigationView)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigationMain)
         bottomNavigationView.setupWithNavController(navController)
     }
 }

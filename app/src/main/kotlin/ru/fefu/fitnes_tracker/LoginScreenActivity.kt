@@ -12,7 +12,7 @@ class LoginScreenActivity: AppCompatActivity() {
         binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.logImageButtonArrow.setOnClickListener {
+        binding.btnArrow.setOnClickListener {
             val intent = Intent(this, WelcomeScreenActivity::class.java)
             startActivity(intent)
         }

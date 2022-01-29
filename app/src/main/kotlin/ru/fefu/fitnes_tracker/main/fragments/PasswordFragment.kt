@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.databinding.ActivityUserDetailsBinding
+import ru.fefu.activitytracker.databinding.FragmentPasswordBinding
 
-class UserActivityDetailsFragment:
-    BaseFragment<ActivityUserDetailsBinding>(R.layout.activity_user_details) {
+class PasswordFragment:
+    BaseFragment<FragmentPasswordBinding>(R.layout.fragment_password) {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +17,7 @@ class UserActivityDetailsFragment:
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState).also {
-            binding.tbUserDetails.setNavigationOnClickListener {
+            binding.tbPassword.setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
         }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityMyDetailsBinding
-import ru.fefu.fitnes_tracker.main.ui.ListItem
 
 class MyActivityDetailsFragment:
     BaseFragment<ActivityMyDetailsBinding>(R.layout.activity_my_details) {
@@ -18,7 +17,7 @@ class MyActivityDetailsFragment:
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState).also {
-            binding.myDetailsToolbar.setNavigationOnClickListener {
+            binding.tbMyDetails.setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
         }

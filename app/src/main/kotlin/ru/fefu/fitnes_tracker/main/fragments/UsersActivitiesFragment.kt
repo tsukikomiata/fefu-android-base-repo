@@ -18,7 +18,7 @@ class UsersActivitiesFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding.frUsRecyclerView) {
+        with(binding.rvUserActivities) {
             adapter = userActivitiesAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }

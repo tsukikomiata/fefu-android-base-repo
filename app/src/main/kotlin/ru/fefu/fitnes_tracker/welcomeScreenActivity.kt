@@ -12,12 +12,12 @@ class WelcomeScreenActivity: AppCompatActivity() {
         binding = ActivityWelcomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.wsButtonRegister.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegistrationScreenActivity::class.java)
             startActivity(intent)
         }
 
-        binding.wsButtonLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val intent = Intent(this, LoginScreenActivity::class.java)
             startActivity(intent)
         }

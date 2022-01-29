@@ -10,69 +10,69 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/log_imageButton_arrow"
-            style="@style/imageButton_arrow"
+            android:id="@+id/btnArrow"
+            style="@style/arrowButton"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/log_textView_login"
-            style="@style/textView_header"
-            android:text="@string/log_textView_text_login"
+            android:id="@+id/tvLogin"
+            style="@style/blackHeader34"
+            android:text="@string/label_enter"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/log_imageButton_arrow"/>
+            app:layout_constraintTop_toBottomOf="@id/btnArrow"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/log_textInputLayout_login"
-            style="@style/textInputLayout_inputField"
+            android:id="@+id/tilLogin"
+            style="@style/tilInputField"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
 
-            app:layout_constraintTop_toBottomOf="@id/log_textView_login">
+            app:layout_constraintTop_toBottomOf="@id/tvLogin">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/reg_textInputLayout_hint_login"/>
+                android:hint="@string/hint_login"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/log_textInputLayout_password"
-            style="@style/textInputLayout_inputField"
+            android:id="@+id/tilPassword"
+            style="@style/tilInputField"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:passwordToggleEnabled="true"
 
-            app:layout_constraintTop_toBottomOf="@id/log_textInputLayout_login">
+            app:layout_constraintTop_toBottomOf="@id/tilLogin">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="@string/reg_textInputLayout_hint_password"/>
+                android:hint="@string/hint_password"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/log_button_continue"
-            style="@style/materialButton_blueButton"
+            android:id="@+id/btnContinue"
+            style="@style/primaryButton"
             android:layout_marginTop="30dp"
-            android:text="@string/reg_materialButton_continue"
+            android:text="@string/label_continue"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/log_textInputLayout_password" />
+            app:layout_constraintTop_toBottomOf="@id/tilPassword" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivBicycles"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/ic_login_bicycles"
+            app:srcCompat="@drawable/ic_bicycles"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/log_button_continue" />
+            app:layout_constraintTop_toBottomOf="@id/btnContinue" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

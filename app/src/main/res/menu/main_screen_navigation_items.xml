@@ -5,10 +5,10 @@
     <item
         android:id="@+id/activityFragment"
         android:icon="@drawable/ic_sports"
-        android:title="@string/main_navigation_item_title_activity" />
+        android:title="@string/label_activity" />
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_person"
-        android:title="@string/main_navigation_item_title_profile" />
+        android:title="@string/label_profile" />
 
 </menu>

@@ -8,10 +8,10 @@
     android:id="@+id/mainLayout">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fr_us_recyclerView"
+        android:id="@+id/rvUserActivities"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_date"
+        tools:listitem="@layout/list_item_date"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

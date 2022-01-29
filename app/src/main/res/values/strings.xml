@@ -1,33 +1,39 @@
 <resources>
     <string name="app_name">Activity Tracker</string>
 
-    <string name="ws_textView_text_tracker">Пожалуй, лучший \n фитнес трекер в ДВФУ</string>
-    <string name="ws_textView_text_students">Созданный студентами \n 2-ого курса</string>
-    <string name="ws_materialButton_text_registration">Зарегистрироваться</string>
-    <string name="ws_materialButton_text_login">Уже есть аккаунт?</string>
+    <string name="label_bestTracker">Пожалуй, лучший \n фитнес трекер в ДВФУ</string>
+    <string name="label_students">Созданный студентами \n 2-ого курса</string>
+    <string name="label_register">Зарегистрироваться</string>
+    <string name="label_alreadyLogin">Уже есть аккаунт?</string>
 
-    <string name="reg_textView_text_registration">Регистрация</string>
-    <string name="reg_textInputLayout_hint_login">Логин</string>
-    <string name="reg_textInputLayout_hint_password">Пароль</string>
-    <string name="reg_textInputLayout_hint_password2">Повторите пароль</string>
-    <string name="reg_textInputLayout_hint_name">Имя или никнейм</string>
-    <string name="reg_textInputLayout_hint_sex">Пол</string>
-    <string-array name="sex">
+    <string name="label_registration">Регистрация</string>
+    <string name="hint_login">Логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_password2">Повторите пароль</string>
+    <string name="hint_nickname">Имя или никнейм</string>
+    <string name="hint_gender">Пол</string>
+    <string-array name="genders">
         <item>Женский</item>
         <item>Мужской</item>
         <item>Другое</item>
     </string-array>
-    <string name="reg_materialButton_continue">Продолжить</string>
+    <string name="label_continue">Продолжить</string>
 
-    <string name="log_textView_text_login">Вход</string>
+    <string name="label_enter">Вход</string>
 
-    <string name="fr_my_act_textView_text_activity">Моя активность</string>
-    <string name="fr_us_act_textView_text_activity">Активность пользователей</string>
-    <string name="fr_prof_textView_text_profile">Профиль</string>
-    <string name="main_navigation_item_title_activity">Активность</string>
-    <string name="main_navigation_item_title_profile">Профиль</string>
+    <string name="label_myActivity">Моя активность</string>
+    <string name="label_usersActivity">Активность пользователей</string>
+    <string name="label_profile">Профиль</string>
+    <string name="label_activity">Активность</string>
 
-    <string name="details_text_start_label">Старт</string>
-    <string name="details_text_end_label">Финиш</string>
-    <string name="details_hint_comment">Комментарий</string>
+    <string name="label_startLabel">Старт</string>
+    <string name="label_endLabel">Финиш</string>
+    <string name="hint_comment">Комментарий</string>
+    <string name="label_save">Сохранить</string>
+    <string name="label_change">Изменить пароль</string>
+    <string name="label_exit">Выйти</string>
+    <string name="hint_oldPassword">Старый пароль</string>
+    <string name="hint_newPassword">Новый пароль</string>
+    <string name="hint_newPassword2">Повторите пароль</string>
+    <string name="label_accept">Принять</string>
 </resources>

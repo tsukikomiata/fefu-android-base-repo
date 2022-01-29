@@ -23,7 +23,7 @@ class RegistrationScreenActivity: AppCompatActivity() {
         binding = ActivityRegistrationScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.regImageButtonArrow.setOnClickListener {
+        binding.btnArrow.setOnClickListener {
             val intent = Intent(this, WelcomeScreenActivity::class.java)
             startActivity(intent)
         }
@@ -32,16 +32,16 @@ class RegistrationScreenActivity: AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val genders = resources.getStringArray(R.array.sex)
+        val genders = resources.getStringArray(R.array.genders)
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, genders)
-        binding.regAutoCompleteTextViewSex.setAdapter(arrayAdapter)
+        binding.autocompleteGender.setAdapter(arrayAdapter)
     }
 
     private fun TextVieWpolicySpan() {
         val spannableString = SpannableString("Нажимая на кнопку, вы соглашаетесь с политикой" +
                 " \nконфиденциальности и обработки персональных \nданных, а также принимаете " +
                 "пользовательское соглашение")
-        val clickableSpan_policy = object : ClickableSpan() {
+        val clickablespanPolicy = object : ClickableSpan() {
             override fun onClick(widget: View) {
                 Toast.makeText(this@RegistrationScreenActivity, "privacy policy", Toast.LENGTH_SHORT).show()
             }
@@ -51,7 +51,7 @@ class RegistrationScreenActivity: AppCompatActivity() {
                 ds.isUnderlineText = false
             }
         }
-        val clickableSpan_agreement = object : ClickableSpan() {
+        val clickablespanAgreement = object : ClickableSpan() {
             override fun onClick(widget: View) {
                 Toast.makeText(this@RegistrationScreenActivity, "user agreement", Toast.LENGTH_SHORT).show()
             }
@@ -62,10 +62,10 @@ class RegistrationScreenActivity: AppCompatActivity() {
             }
         }
 
-        spannableString.setSpan(clickableSpan_policy, 37, 66, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(clickableSpan_agreement, 120, spannableString.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-        reg_textView_policy.text = spannableString
-        reg_textView_policy.movementMethod = LinkMovementMethod.getInstance()
+        spannableString.setSpan(clickablespanPolicy, 37, 66, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(clickablespanAgreement, 120, spannableString.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        tvPolicy.text = spannableString
+        tvPolicy.movementMethod = LinkMovementMethod.getInstance()
     }
 
 }

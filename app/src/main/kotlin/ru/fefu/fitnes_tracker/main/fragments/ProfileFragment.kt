@@ -1,24 +1,27 @@
 package ru.fefu.fitnes_tracker.main.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentProfileBinding
+import ru.fefu.fitnes_tracker.WelcomeScreenActivity
 
 class ProfileFragment :
     BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding.btnChange.setOnClickListener() {
+            val action = ProfileFragmentDirections.actionProfileFragmentToPasswordFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnExit.setOnClickListener() {
+            val intent = Intent(context, WelcomeScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
