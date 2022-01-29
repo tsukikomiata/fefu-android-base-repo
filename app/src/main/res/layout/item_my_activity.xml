@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_activity_item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/my_activity_item_view"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:background="@color/white"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/my_activity_item_textView_distance"
+            style="@style/textView_blackHeader"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Расстояние"
+
+            app:layout_constraintStart_toStartOf="@id/my_activity_item_view"
+            app:layout_constraintTop_toTopOf="@id/my_activity_item_view" />
+
+        <TextView
+            android:id="@+id/my_activity_item_textView_time"
+            style="@style/textView_blackText"
+            android:layout_marginTop="4dp"
+            android:text="Время"
+
+            app:layout_constraintStart_toStartOf="@id/my_activity_item_textView_distance"
+            app:layout_constraintTop_toBottomOf="@id/my_activity_item_textView_distance" />
+
+        <TextView
+            android:id="@+id/my_activity_item_textView_activity"
+            style="@style/textView_blackText"
+            android:layout_marginTop="16dp"
+            android:text="Активность"
+
+            app:layout_constraintEnd_toStartOf="@id/my_activity_item_textView_date"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/my_activity_item_textView_distance"
+            app:layout_constraintTop_toBottomOf="@id/my_activity_item_textView_time" />
+
+        <TextView
+            android:id="@+id/my_activity_item_textView_date"
+            style="@style/textView_greyText"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Дата"
+
+            app:layout_constraintEnd_toEndOf="@id/my_activity_item_view"
+            app:layout_constraintStart_toEndOf="@id/my_activity_item_textView_activity"
+            app:layout_constraintTop_toBottomOf="@id/my_activity_item_textView_time" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

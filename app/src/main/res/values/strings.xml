@@ -26,4 +26,8 @@
     <string name="fr_prof_textView_text_profile">Профиль</string>
     <string name="main_navigation_item_title_activity">Активность</string>
     <string name="main_navigation_item_title_profile">Профиль</string>
+
+    <string name="details_text_start_label">Старт</string>
+    <string name="details_text_end_label">Финиш</string>
+    <string name="details_hint_comment">Комментарий</string>
 </resources>

@@ -1,23 +1,31 @@
 package ru.fefu.fitnes_tracker.main.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
+import ru.fefu.fitnes_tracker.main.ui.ListItemAdapter
+import ru.fefu.fitnes_tracker.main.ui.UsersListItemRepository
 
-class UsersActivitiesFragment : Fragment() {
+class UsersActivitiesFragment :
+    BaseFragment<FragmentUsersActivitiesBinding>(R.layout.fragment_users_activities) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val repository = UsersListItemRepository()
+    private val userActivitiesAdapter = ListItemAdapter(repository.getItems())
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_users_activities, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding.frUsRecyclerView) {
+            adapter = userActivitiesAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        userActivitiesAdapter.setItemClickListener {
+            val action = ActivityFragmentDirections.actionActivityFragmentToUserActivityDetailsFragment()
+            findNavController().navigate(action)
+        }
     }
 }

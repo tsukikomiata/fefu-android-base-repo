@@ -8,11 +8,28 @@
     <fragment
         android:id="@+id/activityFragment"
         android:name="ru.fefu.fitnes_tracker.main.fragments.ActivityFragment"
-        android:label="ActivityFragment"
-        tools:layout="@layout/fragment_activity"/>
+        android:label="ActivityFragment">
+        <action
+            android:id="@+id/action_activityFragment_to_myActivityDetailsFragment"
+            app:destination="@id/myActivityDetailsFragment">
+        </action>
+        <action
+            android:id="@+id/action_activityFragment_to_userActivityDetailsFragment"
+            app:destination="@id/userActivityDetailsFragment" >
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="ru.fefu.fitnes_tracker.main.fragments.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/myActivityDetailsFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.MyActivityDetailsFragment"
+        android:label="MyActivityDetailsFragment">
+    </fragment>
+    <fragment
+        android:id="@+id/userActivityDetailsFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.UserActivityDetailsFragment"
+        android:label="UserActivityDetailsFragment" />
 </navigation>
