@@ -1,0 +1,112 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbUserDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="4dp"
+        app:navigationIcon="@drawable/ic_arrow_primary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                style="@style/purple700Text16"
+                android:layout_marginTop="24dp"
+                android:text="\@van_darkholme" />
+
+            <TextView
+                android:id="@+id/tvUserDistance"
+                style="@style/blackHeader24"
+                android:layout_marginTop="24dp"
+                android:text="14.32 км" />
+
+            <TextView
+                android:id="@+id/tvUserEnd"
+                style="@style/greyText16"
+                android:text="14 часов назад" />
+
+            <TextView
+                android:id="@+id/tvUserTime"
+                style="@style/blackHeader24"
+                android:layout_marginTop="24dp"
+                android:text="1 ч 42 мин" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvUserStartLabel"
+                    style="@style/blackText16"
+                    android:text="@string/label_startLabel" />
+
+                <TextView
+                    android:id="@+id/tvUserStartTime"
+                    style="@style/greyText16"
+                    android:layout_marginStart="8dp"
+                    android:text="14:49" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:id="@+id/tvUserEndLabel"
+                    style="@style/blackText16"
+                    android:text="@string/label_endLabel" />
+
+                <TextView
+                    android:id="@+id/tvUserEndTime"
+                    style="@style/greyText16"
+                    android:layout_marginStart="8dp"
+                    android:text="16:31" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilUserComment"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tieUserComment"
+                    style="@style/greyText16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_comment"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:text="Я бежал очень сильно, ты так не сможешь" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/activityFragment">
+
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.ActivityFragment"
+        android:label="ActivityFragment">
+        <action
+            android:id="@+id/action_activityFragment_to_myActivityDetailsFragment"
+            app:destination="@id/myActivityDetailsFragment">
+        </action>
+        <action
+            android:id="@+id/action_activityFragment_to_userActivityDetailsFragment"
+            app:destination="@id/userActivityDetailsFragment" >
+        </action>
+        <action
+            android:id="@+id/action_activityFragment_to_mapActivity"
+            app:destination="@id/mapActivity" >
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.PasswordFragment"
+        android:label="passwordFragment">
+    </fragment>
+    <activity
+        android:id="@+id/mapActivity"
+        android:name="ru.fefu.fitnes_tracker.map.MapActivity"
+        android:label="mapActivity">
+    </activity>
+    <fragment
+        android:id="@+id/myActivityDetailsFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.MyActivityDetailsFragment"
+        android:label="MyActivityDetailsFragment">
+    </fragment>
+    <fragment
+        android:id="@+id/userActivityDetailsFragment"
+        android:name="ru.fefu.fitnes_tracker.main.fragments.UserActivityDetailsFragment"
+        android:label="UserActivityDetailsFragment"/>
+</navigation>
