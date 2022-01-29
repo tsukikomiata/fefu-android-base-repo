@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvListItemMy"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/vListItemMy"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:background="@color/white"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvListItemMyDistance"
+            style="@style/blackHeader24"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Расстояние"
+
+            app:layout_constraintStart_toStartOf="@id/vListItemMy"
+            app:layout_constraintTop_toTopOf="@id/vListItemMy" />
+
+        <TextView
+            android:id="@+id/tvListItemMyTime"
+            style="@style/blackText16"
+            android:layout_marginTop="4dp"
+            android:text="Время"
+
+            app:layout_constraintStart_toStartOf="@id/tvListItemMyDistance"
+            app:layout_constraintTop_toBottomOf="@id/tvListItemMyDistance" />
+
+        <TextView
+            android:id="@+id/tvListItemMyActivity"
+            style="@style/blackText16"
+            android:layout_marginTop="16dp"
+            android:text="Активность"
+
+            app:layout_constraintEnd_toStartOf="@id/tvListItemMyDate"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/tvListItemMyDistance"
+            app:layout_constraintTop_toBottomOf="@id/tvListItemMyTime" />
+
+        <TextView
+            android:id="@+id/tvListItemMyDate"
+            style="@style/greyText16"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Дата"
+
+            app:layout_constraintEnd_toEndOf="@id/vListItemMy"
+            app:layout_constraintStart_toEndOf="@id/tvListItemMyActivity"
+            app:layout_constraintTop_toBottomOf="@id/tvListItemMyTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
