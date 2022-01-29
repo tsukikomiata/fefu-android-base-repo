@@ -20,4 +20,10 @@
     <string name="reg_materialButton_continue">Продолжить</string>
 
     <string name="log_textView_text_login">Вход</string>
+
+    <string name="fr_my_act_textView_text_activity">Моя активность</string>
+    <string name="fr_us_act_textView_text_activity">Активность пользователей</string>
+    <string name="fr_prof_textView_text_profile">Профиль</string>
+    <string name="main_navigation_item_title_activity">Активность</string>
+    <string name="main_navigation_item_title_profile">Профиль</string>
 </resources>

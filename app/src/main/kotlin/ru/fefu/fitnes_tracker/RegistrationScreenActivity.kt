@@ -12,20 +12,19 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import kotlinx.android.synthetic.main.registration.*
+import kotlinx.android.synthetic.main.activity_registration_screen.*
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.databinding.RegistrationBinding
+import ru.fefu.activitytracker.databinding.ActivityRegistrationScreenBinding
 
-class registrationActivity: AppCompatActivity() {
-    lateinit var binding: RegistrationBinding
+class RegistrationScreenActivity: AppCompatActivity() {
+    lateinit var binding: ActivityRegistrationScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RegistrationBinding.inflate(layoutInflater)
+        binding = ActivityRegistrationScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.regImageButtonArrow.setOnClickListener {
-            val intent = Intent(this, welcomeScreenActivity::class.java)
+            val intent = Intent(this, WelcomeScreenActivity::class.java)
             startActivity(intent)
         }
         TextVieWpolicySpan()
@@ -44,7 +43,7 @@ class registrationActivity: AppCompatActivity() {
                 "пользовательское соглашение")
         val clickableSpan_policy = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                Toast.makeText(this@registrationActivity, "privacy policy", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RegistrationScreenActivity, "privacy policy", Toast.LENGTH_SHORT).show()
             }
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
@@ -54,7 +53,7 @@ class registrationActivity: AppCompatActivity() {
         }
         val clickableSpan_agreement = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                Toast.makeText(this@registrationActivity, "user agreement", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RegistrationScreenActivity, "user agreement", Toast.LENGTH_SHORT).show()
             }
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)

@@ -44,4 +44,8 @@
         <item name="android:layout_marginEnd">20dp</item>
     </style>
 
+    <style name="AllCaps" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
 </resources>
