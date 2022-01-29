@@ -13,7 +13,7 @@ class UsersActivitiesFragment :
     BaseFragment<FragmentUsersActivitiesBinding>(R.layout.fragment_users_activities) {
 
     private val repository = UsersListItemRepository()
-    private val userActivitiesAdapter = ListItemAdapter(repository.getItems())
+    private val userActivitiesAdapter = ListItemAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -2,35 +2,21 @@ package ru.fefu.fitnes_tracker.main.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ListItemDateBinding
 import ru.fefu.activitytracker.databinding.ListItemMyActivityBinding
 import ru.fefu.activitytracker.databinding.ListItemUserActivityBinding
 
-class ListItemAdapter (
-    listItems: List<ListItem>
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val items = listItems.toMutableList()
+class ListItemAdapter
+    : ListAdapter<ListItem, RecyclerView.ViewHolder>(ListItemCallback()) {
 
     private var itemClickListener: (Int) -> Unit = {}
 
-    private var myItemClickListener: (Int, ListItem.MyActivity) -> Unit =
-        { position: Int, data: ListItem.MyActivity -> }
-
-    private var userItemClickListener: (Int, ListItem.UserActivity) -> Unit =
-        { position: Int, data: ListItem.UserActivity -> }
-
     fun setItemClickListener(listener: (Int) -> Unit) {
         itemClickListener = listener
-    }
-
-    fun setMyItemClickListener(listener: (Int, ListItem.MyActivity) -> Unit) {
-        myItemClickListener = listener
-    }
-    fun setUserItemClickListener(listener: (Int, ListItem.UserActivity) -> Unit) {
-        userItemClickListener = listener
     }
 
     fun getItemClickListener(): (Int) -> Unit {
@@ -69,27 +55,27 @@ class ListItemAdapter (
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
-            is DateViewHolder -> holder.bind(items[position] as ListItem.Date)
-            is MyActivityViewHolder -> holder.bind(items[position] as ListItem.MyActivity)
-            is UserActivityViewHolder -> holder.bind(items[position] as ListItem.UserActivity)
+            is DateViewHolder -> holder.bind(currentList[position] as ListItem.Date)
+            is MyActivityViewHolder -> holder.bind(currentList[position] as ListItem.MyActivity)
+            is UserActivityViewHolder -> holder.bind(currentList[position] as ListItem.UserActivity)
         }
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = currentList.size
 
     override fun getItemViewType(position: Int): Int {
-        return when(items[position]) {
+        return when(currentList[position]) {
             is ListItem.Date -> R.layout.list_item_date
             is ListItem.MyActivity -> R.layout.list_item_my_activity
             is ListItem.UserActivity -> R.layout.list_item_user_activity
         }
     }
 
-        inner class DateViewHolder(private val binding: ListItemDateBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(date: ListItem.Date) {
-                binding.tvListItemDate.text = date.date
-            }
+    inner class DateViewHolder(private val binding: ListItemDateBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(date: ListItem.Date) {
+            binding.tvListItemDate.text = date.date
         }
+    }
 
     inner class MyActivityViewHolder(private val binding: ListItemMyActivityBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
@@ -122,11 +108,33 @@ class ListItemAdapter (
         }
     }
 
+    internal class ListItemCallback : DiffUtil.ItemCallback<ListItem>() {
+        override fun areItemsTheSame(oldItem: ListItem, newItem: ListItem): Boolean {
+            return when {
+                oldItem is ListItem.Date && newItem is ListItem.Date ->
+                    oldItem.date == newItem.date
+                oldItem is ListItem.MyActivity && newItem is ListItem.MyActivity ->
+                    oldItem.id == newItem.id
+                else -> false
+            }
+        }
+
+        override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem): Boolean {
+            return when {
+                oldItem is ListItem.Date && newItem is ListItem.Date ->
+                    areItemsTheSame(oldItem, newItem)
+                oldItem is ListItem.MyActivity && newItem is ListItem.MyActivity ->
+                    oldItem == newItem
+                else -> false
+            }
+
+        }
+
 //    fun removeItem(position: Int) {
 //        if (position in items.indices) {
 //            items.removeAt(position)
 //            notifyItemRemoved(position)
 //        }
 //    }
-
+    }
 }

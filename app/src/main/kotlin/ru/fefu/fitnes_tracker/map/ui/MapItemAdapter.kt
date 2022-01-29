@@ -11,37 +11,47 @@ class MapItemAdapter (
     private val mapItems: List<MapItem>
 ) : RecyclerView.Adapter<MapItemAdapter.MapItemViewHolder>() {
 
-        private var items = mutableListOf<View>()
+    private var items = mutableListOf<View>()
 
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): MapItemAdapter.MapItemViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.map_item_activity, parent, false)
-            items.add(view)
-            return MapItemViewHolder(view)
-        }
+    private var itemClickListener: (Int, MapItemType) -> Unit = {
+            _, _ ->
+    }
+    fun setItemClickListener(listener: (Int, MapItemType) -> Unit) {
+        itemClickListener = listener
+    }
 
-        override fun onBindViewHolder(holder: MapItemAdapter.MapItemViewHolder, position: Int) {
-            holder.bind(mapItems[position])
-        }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MapItemAdapter.MapItemViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.map_item_activity, parent, false)
+        items.add(view)
+        return MapItemViewHolder(view)
+    }
 
-        override fun getItemCount(): Int = mapItems.size
+    override fun onBindViewHolder(holder: MapItemAdapter.MapItemViewHolder, position: Int) {
+        holder.bind(mapItems[position])
+    }
 
-        inner class MapItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            private val tvMapItemName: TextView = itemView.findViewById(R.id.tvMapItemName1)
+    override fun getItemCount(): Int = mapItems.size
 
-            init {
-                itemView.setOnClickListener {
-                    items.forEach { views ->
-                        views.isSelected = it == views
-                    }
+    inner class MapItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val tvMapItemName: TextView = itemView.findViewById(R.id.tvMapItemName1)
+        private lateinit var type: MapItemType
+        init {
+            itemView.setOnClickListener {
+                items.forEach { views ->
+                    views.isSelected = it == views
+                    if (adapterPosition != RecyclerView.NO_POSITION)
+                    itemClickListener.invoke(adapterPosition, type)
                 }
             }
-
-            fun bind(item: MapItem) {
-                tvMapItemName.text = item.name
-            }
         }
+
+        fun bind(item: MapItem) {
+            tvMapItemName.text = MapItemType.values()[item.type].type
+            type = MapItemType.values()[item.type]
+        }
+    }
 }
