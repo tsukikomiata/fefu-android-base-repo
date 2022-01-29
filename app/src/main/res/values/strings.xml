@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Activity Tracker</string>
+
+    <string name="ws_textView_text_tracker">Пожалуй, лучший \n фитнес трекер в ДВФУ</string>
+    <string name="ws_textView_text_students">Созданный студентами \n 2-ого курса</string>
+    <string name="ws_materialButton_text_registration">Зарегистрироваться</string>
+    <string name="ws_materialButton_text_login">Уже есть аккаунт?</string>
+
+    <string name="reg_textView_text_registration">Регистрация</string>
+    <string name="reg_textInputLayout_hint_login">Логин</string>
+    <string name="reg_textInputLayout_hint_password">Пароль</string>
+    <string name="reg_textInputLayout_hint_password2">Повторите пароль</string>
+    <string name="reg_textInputLayout_hint_name">Имя или никнейм</string>
+    <string name="reg_textInputLayout_hint_sex">Пол</string>
+    <string-array name="sex">
+        <item>Женский</item>
+        <item>Мужской</item>
+        <item>Другое</item>
+    </string-array>
+    <string name="reg_materialButton_continue">Продолжить</string>
+
+    <string name="log_textView_text_login">Вход</string>
 </resources>
