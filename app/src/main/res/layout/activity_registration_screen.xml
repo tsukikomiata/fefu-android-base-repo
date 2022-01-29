@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/reg_imageButton_arrow"
+            style="@style/imageButton_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/reg_textView_registration"
+            style="@style/textView_header"
+            android:text="@string/reg_textView_text_registration"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reg_imageButton_arrow" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_textInputLayout_login"
+            style="@style/textInputLayout_inputField"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+
+            app:layout_constraintTop_toBottomOf="@id/reg_textView_registration">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/reg_textInputLayout_hint_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_textInputLayout_password"
+            style="@style/textInputLayout_inputField"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:passwordToggleEnabled="true"
+
+            app:layout_constraintTop_toBottomOf="@id/reg_textInputLayout_login">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/reg_textInputLayout_hint_password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_textInputLayout_password2"
+            style="@style/textInputLayout_inputField"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:passwordToggleEnabled="true"
+
+            app:layout_constraintTop_toBottomOf="@id/reg_textInputLayout_password">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/reg_textInputLayout_hint_password2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_textInputLayout_name"
+            style="@style/textInputLayout_inputField"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+
+            app:layout_constraintTop_toBottomOf="@id/reg_textInputLayout_password2">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/reg_textInputLayout_hint_name"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_textInputLayout_sex"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/reg_textInputLayout_hint_sex"
+
+            app:layout_constraintTop_toBottomOf="@id/reg_textInputLayout_name">
+            <AutoCompleteTextView
+                android:id="@+id/reg_autoCompleteTextView_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reg_button_continue"
+            style="@style/materialButton_blueButton"
+            android:layout_marginTop="30dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reg_textInputLayout_sex"
+            android:text="@string/reg_materialButton_continue"/>
+
+        <TextView
+            android:id="@+id/reg_textView_policy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="15dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reg_button_continue"/>
+
+        <ImageView
+            android:id="@+id/reg_imageView_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:paddingBottom="30dp"
+            app:srcCompat="@drawable/ic_group_12"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reg_textView_policy"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
